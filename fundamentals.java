@@ -1,5 +1,25 @@
+public class Kata {
+  public ArrayList<String> fizzBuzz() {
+      ArrayList<String> result = new ArrayList<>();
+        for (int i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                result.add("FizzBuzz");
+            }
+            if (i % 3 == 0) {
+                result.add("Fizz");
+            }
+            if (i % 5 == 0) {
+                result.add("Buzz");
+            }
+            if (i % 3 != 0 && i % 5 != 0) {
+                result.add(String.valueOf(i));
+            }
+        }
+      return result;
+}
+
 /*
-Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list, respectively.
+Your task is to make two functions (max and min, or maximum and minimum, etc., depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list, respectively.
 
 Example (Input -> Output): [4,6,2,1,9,63,-134,566] -> max = 566, min = -134
 */
