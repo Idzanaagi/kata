@@ -27,7 +27,6 @@ public class Banjo {
   }
 }
 
-
 /*
 Write a function to split a string and convert it into an array of words.
 */
@@ -47,5 +46,14 @@ class Kata {
             result.append(Integer.toString(i)).append(" sheep...");
         }
     return result.toString();
+  }
+}
+
+/*
+Complete the solution so that it reverses the string passed into it. 
+*/
+public class Kata {
+  public static String solution(String str) {
+    return new StringBuilder(str).reverse().toString();
   }
 }
