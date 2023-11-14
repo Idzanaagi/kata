@@ -49,3 +49,58 @@ public class Counter {
     return filter.size();
   }
 }
+
+// ======================
+
+/*
+Write a function that returns both the minimum and maximum number of the given list/array.
+Examples (Input --> Output): [1,2,3,4,5] --> [1,5]
+*/
+class MinMax {
+    public static int[] minMax(int[] arr) {
+        int[] sorted = Arrays.stream(arr).sorted().toArray();
+        int[] result = new int[2];
+        result[0] = sorted[0];
+        result[1] = sorted[sorted.length - 1];
+        return result;
+    }
+}
+
+/*
+Write a function which takes a list of strings and returns each line prepended by the correct number.
+Examples: (Input --> Output): ["a", "b", "c"] --> ["1: a", "2: b", "3: c"]
+*/
+public class LineNumbering {
+    public static List<String> number(List<String> lines) {
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < lines.size(); i++) {
+            result.add((i + 1) + ": " + lines.get(i));
+        }
+        return result;
+    }
+}
+
+/*
+In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+Examples: (Input --> Output): Kata.filterList(List.of(1, 2, "a", "b")) => List.of(1,2)
+*/
+public class Kata {
+  public static List<Object> filterList(final List<Object> list) {
+    return list.stream().filter(item -> item instanceof Integer).collect(Collectors.toList());
+  }
+}
+
+/*
+Your task is to return the number of people who are still on the bus after the last bus stop (after the last array).
+*/
+class Metro {
+  public static int countPassengers(ArrayList<int[]> stops) {
+        int in = 0;
+        int out = 0;
+        for (int[] stop : stops) {
+            in += stop[0];
+            out += stop[1];
+        }
+        return in - out;
+  }
+}
